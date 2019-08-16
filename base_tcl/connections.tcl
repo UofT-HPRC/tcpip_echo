@@ -1,0 +1,66 @@
+connect_bd_net [get_bd_pins refclk_p] [get_bd_pins xxv_ethernet_0/gt_refclk_p]
+connect_bd_net [get_bd_pins refclk_n] [get_bd_pins xxv_ethernet_0/gt_refclk_n]
+connect_bd_intf_net [get_bd_intf_pins gt_rx] [get_bd_intf_pins xxv_ethernet_0/gt_rx]
+
+connect_bd_net [get_bd_pins vcc/dout] [get_bd_pins xxv_ethernet_0/ctl_tx_enable_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_fcs_ins_enable_0] [get_bd_pins vcc/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_check_preamble_0] [get_bd_pins vcc/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_check_sfd_0] [get_bd_pins vcc/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_delete_fcs_0] [get_bd_pins vcc/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_enable_0] [get_bd_pins vcc/dout]
+
+connect_bd_net [get_bd_pins gnd/dout] [get_bd_pins xxv_ethernet_0/ctl_tx_data_pattern_select_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_ignore_fcs_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_send_idle_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_send_lfi_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_send_rfi_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_test_pattern_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_test_pattern_enable_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_test_pattern_select_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_force_resync_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins gnd/dout] [get_bd_pins xxv_ethernet_0/ctl_rx_ignore_fcs_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_data_pattern_select_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_process_lfi_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins gnd/dout] [get_bd_pins xxv_ethernet_0/ctl_rx_test_pattern_enable_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_rx_test_pattern_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/gtwiz_reset_tx_datapath_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/gtwiz_reset_rx_datapath_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/rx_reset_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins xxv_ethernet_0/tx_reset_0] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins seed_c/dout] [get_bd_pins xxv_ethernet_0/ctl_tx_test_pattern_seed_a_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/ctl_tx_test_pattern_seed_b_0] [get_bd_pins seed_c/dout]
+
+connect_bd_net [get_bd_pins max_pack_l/dout] [get_bd_pins xxv_ethernet_0/ctl_rx_max_packet_len_0]
+connect_bd_net [get_bd_pins min_pack_l/dout] [get_bd_pins xxv_ethernet_0/ctl_rx_min_packet_len_0]
+connect_bd_net [get_bd_pins loop_c/dout] [get_bd_pins xxv_ethernet_0/gt_loopback_in_0]
+
+connect_bd_net [get_bd_pins tx_pre_c/dout] [get_bd_pins xxv_ethernet_0/tx_preamblein_0]
+connect_bd_net [get_bd_pins transc_clk_sel/dout] [get_bd_pins xxv_ethernet_0/txoutclksel_in_0]
+connect_bd_net [get_bd_pins xxv_ethernet_0/rxoutclksel_in_0] [get_bd_pins transc_clk_sel/dout]
+
+connect_bd_net [get_bd_pins dlck_100MHz] [get_bd_pins xxv_ethernet_0/dclk]
+connect_bd_net [get_bd_pins network_reset] [get_bd_pins xxv_ethernet_0/sys_reset]
+connect_bd_net [get_bd_pins xxv_ethernet_0/tx_clk_out_0] [get_bd_pins xxv_ethernet_0/rx_core_clk_0]
+
+connect_bd_intf_net [get_bd_intf_pins gt_tx] [get_bd_intf_pins xxv_ethernet_0/gt_tx]
+
+connect_bd_intf_net [get_bd_intf_pins s_axis_tx] [get_bd_intf_pins axis_register_slice_in/S_AXIS]
+connect_bd_intf_net [get_bd_intf_pins axis_register_slice_in/M_AXIS] [get_bd_intf_pins fifo_generator_0/S_AXIS]
+connect_bd_intf_net [get_bd_intf_pins fifo_generator_0/M_AXIS] [get_bd_intf_pins xxv_ethernet_0/axis_tx_0]
+
+connect_bd_net [get_bd_pins fifo_generator_0/s_aclk] [get_bd_pins xxv_ethernet_0/tx_clk_out_0]
+connect_bd_net [get_bd_pins axis_register_slice_out/aclk] [get_bd_pins xxv_ethernet_0/tx_clk_out_0]
+connect_bd_net [get_bd_pins axis_register_slice_in/aclk] [get_bd_pins xxv_ethernet_0/tx_clk_out_0]
+
+connect_bd_net [get_bd_pins axis_aresetn] [get_bd_pins axis_register_slice_in/aresetn]
+connect_bd_net [get_bd_pins axis_aresetn] [get_bd_pins fifo_generator_0/s_aresetn]
+connect_bd_net [get_bd_pins axis_aresetn] [get_bd_pins axis_register_slice_out/aresetn]
+
+connect_bd_intf_net [get_bd_intf_pins m_axis_rx] [get_bd_intf_pins axis_register_slice_out/M_AXIS]
+connect_bd_intf_net [get_bd_intf_pins xxv_ethernet_0/axis_rx_0] [get_bd_intf_pins axis_register_slice_out/S_AXIS]
+
+connect_bd_net [get_bd_pins xxv_ethernet_0/user_tx_reset_0] [get_bd_pins user_reset_and/Op2]
+connect_bd_net [get_bd_pins user_reset_and/Res] [get_bd_pins reset_inv/Op1]
+connect_bd_net [get_bd_pins net_init_done] [get_bd_pins reset_inv/Res]
+
+connect_bd_net [get_bd_pins clk_161] [get_bd_pins xxv_ethernet_0/tx_clk_out_0]
