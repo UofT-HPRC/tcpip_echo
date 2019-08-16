@@ -20,12 +20,12 @@ Generate bitstream
 
 For ping:
 
-   ping -I eth3 10.1.2.120
+      ping -I eth3 10.1.2.120
    
-      where eth3 is the interface connected to the board
+where eth3 is the interface connected to the board
 
 For TCP/IP:
 
-   cd tools
+       cd tools
    
-   python3 ./client.py hello cruel world
+       python3 ./client.py hello cruel world
