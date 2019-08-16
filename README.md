@@ -2,7 +2,7 @@
 
 A simple application that uses a modified version of the TCP/IP Xilinx HLS IP.
 
-## Compativility
+## Compatibility
 
 The system is designed to work with Vivado 2019.1
 
